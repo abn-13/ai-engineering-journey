@@ -14,6 +14,7 @@ Goal: by the end of the day, a working, evaluated, documented classic-OpenCV pro
 6. Commit after every working step with a clear message.
 7. Be honest about weaknesses. Never inflate the metrics.
 8. Keep me on schedule: at the start of each step, tell me its time budget.
+9. I'm completely new to OpenCV. When a step is done, explain it in plain language, as if to a beginner: what we did, what each new thing is, how it works, and why it matters, with simple analogies. Write check questions in plain words and include the background I need to understand them.
 
 ## Overrides of the parent CLAUDE.md
 
