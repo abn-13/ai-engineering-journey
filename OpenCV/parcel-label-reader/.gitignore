@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.DS_Store
+
+outputs/
+data/raw/
+
+# Synthetic images are regenerated from a fixed seed; only ground_truth.csv is committed
+data/synthetic/*.png

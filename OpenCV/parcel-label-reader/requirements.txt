@@ -1,0 +1,12 @@
+# Core pipeline
+opencv-contrib-python==5.0.0.93  # includes cv2.aruco and cv2.barcode; never install opencv-python alongside it
+numpy==2.5.4
+zxing-cpp==3.1.1                 # Code128 decoding (cv2.barcode only decodes EAN/UPC)
+
+# Synthetic data generation only
+qrcode==8.2
+python-barcode==0.16.1
+pillow==13.0.0
+
+# Dev
+pytest==9.2.0
