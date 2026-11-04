@@ -5,7 +5,14 @@ I write each definition; Claude checks it and marks it ✅ (correct) or ⚠️ (
 Format: `- **Term**: my definition. ✅ (YYYY-MM-DD)`
 
 ## To define
+
 <!-- Claude adds new terms here during sessions. Move each one to a section below once I've defined it. -->
+
+- Generator (`yield`)
+- Class attribute vs instance attribute
+- Polymorphism
+- Staging area (Git)
+- Branch (Git)
 
 ## Python & tooling
 

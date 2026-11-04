@@ -13,7 +13,7 @@
 
 | Week | Starts | Phase work | DSA topic |
 |---|---|---|---|
-| 1 | 4 Nov | Phase 0, then start Phase 1 | Arrays & hashing |
+| 1 | 4 Nov | Phase 0 (7 sessions) | Arrays & hashing (starts after 0.3) |
 | 2–4 | 11 Nov | Phase 1: simulation + optimisation | Arrays & hashing, two pointers, sliding window, stack |
 | 5–8 | 2 Dec | Phase 2: LLM basics + RAG | Stack, binary search, linked list, trees |
 | 9–12 | 30 Dec | Phase 3: tool calling + agent | Trees, heaps, graphs |
@@ -25,38 +25,61 @@ Christmas and New Year fall in weeks 8–9. Use the buffer week rather than cram
 
 ---
 
-## Phase 0: Fundamentals refresher (week 1, max 4 sessions)
+## Phase 0: Fundamentals refresher (week 1, extended to 7 sessions)
 
-Skip anything the diagnostic shows I already know. Adjustments are recorded in `PROGRESS.md`.
+The diagnostic on 4 Nov showed gaps in Python, OOP, Git and the terminal. Nothing was skipped, and Phase 0 went from 4 to 7 sessions. Details are in `PROGRESS.md`.
 
 ### 0.1 Setup and diagnostic
 **Goal:** Repo ready; find the weak spots in Python, OOP and Git.
 - [x] Repo, venv, roadmap, tutor rules and slash commands created
-- [ ] First commit pushed to GitHub
-- [ ] Diagnostic answered; results and Phase 0 adjustments recorded in `PROGRESS.md`
+- [x] First commit pushed to GitHub
+- [x] Diagnostic answered; results and Phase 0 adjustments recorded in `PROGRESS.md`
 
-### 0.2 Python core
-**Goal:** Solid on everyday Python, plus generators, which SimPy is built on.
-Topics: mutability and references (`is` vs `==`), comprehensions, `dict`/`set`/`Counter`/`defaultdict`, functions (`*args`, `**kwargs`, defaults), exceptions, modules and `if __name__ == "__main__"`, generators and `yield`, type hints.
-- [ ] Exercises in `phase-0-fundamentals/python_core/` written by me and passing their tests
-- [ ] I can explain the mutable-default-argument trap and what `yield` does to a function
+### 0.2 Terminal, venv and the basic Git loop
+**Goal:** Move around the terminal, run Python inside the venv, and save work with Git.
+Topics: absolute vs relative paths, `pwd`/`cd`/`ls`/`mkdir`, environment variables and `PATH`, activating `.venv`, running a script, `pip install`, the `git status` → `add` → `commit` → `push` loop.
+- [ ] Created and ran a script in `phase-0-fundamentals/` from the terminal, inside the venv
+- [ ] Installed a package and found it with `pip list`
+- [ ] Committed and pushed it without looking up the commands
+- [ ] I can explain what activating a venv actually changes
 
-### 0.3 OOP in Python (vs Java)
-**Goal:** Map my Java OOP knowledge onto Python's way of doing it.
-Topics: classes and `self`, instance vs class attributes, inheritance and `super()`, polymorphism and duck typing, encapsulation by convention (`_name`) and `@property`, dunder methods (`__repr__`, `__eq__`), `@dataclass`, abstract base classes vs Java interfaces.
-- [ ] A small warehouse-themed class hierarchy written by me, with pytest tests
-- [ ] I can explain when to use a dataclass vs a plain class vs a dict
+### 0.3 Python core I: data and control flow
+**Goal:** Write small programs with lists, dicts, sets, loops and functions without syntax errors.
+Topics: values vs references, lists, dicts, sets, tuples and unpacking, `for`/`while`/`if`, `=` vs `==`, functions and return values, `dict.get`, `Counter` and `defaultdict`.
+- [ ] Exercises in `phase-0-fundamentals/python_core/` written by me, checked with `assert`
+- [ ] Diagnostic Q3 (totals per customer) redone correctly with one loop
+- [ ] I can explain the "accumulate into a dict" pattern
 
-### 0.4 Git, terminal and project tooling
-**Goal:** A confident daily workflow.
-Topics: Git (status, diff, log, staging, branches, merge, restore, amend, remotes), terminal (paths, environment variables, `PATH`, pipes), venv, pip and `requirements.txt`, pytest basics.
+### 0.4 Python core II: idioms and generators
+**Goal:** The Python features Phase 1 leans on, especially generators, which SimPy is built on.
+Topics: comprehensions, the mutable-default-argument trap, exceptions, modules and `if __name__ == "__main__"`, type hints, generators and `yield`.
+- [ ] Exercises written by me and passing
+- [ ] Re-answered diagnostic Q1 and Q2 and can explain both outputs
+- [ ] Wrote a small generator of my own (e.g. a shift clock that yields times)
+
+### 0.5 OOP I: classes and pytest
+**Goal:** Write and test a Python class, mapped onto what I know from Java.
+Topics: classes, `self`, `__init__`, methods, instance vs class attributes (Java `static`), `__repr__` and `__eq__`; pytest basics (test files, `assert`, running `pytest`).
+- [ ] A warehouse-themed class (e.g. `Forklift`) written by me, with passing pytest tests
+- [ ] Re-answered diagnostic Q4 and can explain it
+
+### 0.6 OOP II: inheritance, polymorphism, encapsulation
+**Goal:** Python's version of inheritance, overriding and private fields.
+Topics: inheritance and `super()`, overriding and polymorphism, duck typing, the `_name` convention and `@property`, `@dataclass`, abstract base classes vs Java interfaces.
+- [ ] A small class hierarchy written by me, with pytest tests
+- [ ] Diagnostic Q6 (`Bin` with a validated `stock`) done with `@property`
+- [ ] Re-answered diagnostic Q5; I can say when to use a dataclass vs a plain class vs a dict
+
+### 0.7 Git beyond the basics
+**Goal:** Branches and recovering from mistakes, so Git stops feeling risky.
+Topics: `diff`, `log`, branches, merge, `restore`, `commit --amend`, `fetch` vs `pull`, what a branch really is.
 - [ ] Made a feature branch, committed in small steps, merged to `main`, pushed
 - [ ] Recovered from deliberate mistakes: discarded a change, amended a commit
-- [ ] I can explain what activating a venv actually changes
+- [ ] Re-answered diagnostic Q7 and Q8
 
 ---
 
-## Phase 1: Bridge project, warehouse simulation + Bayesian optimisation (weeks 1–4)
+## Phase 1: Bridge project, warehouse simulation + Bayesian optimisation (weeks 2–4)
 
 SimPy model of a small warehouse (arrivals, putaway, picking, staging), with warm-up, replications and confidence intervals. Then Bayesian optimisation tunes staffing and shift settings against a cost-and-delay objective, wrapped in FastAPI, containerised with Docker and deployed on AWS.
 
