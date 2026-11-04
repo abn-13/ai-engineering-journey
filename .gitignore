@@ -1,0 +1,35 @@
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Secrets (keep a .env.example with dummy values if useful)
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Tests & tools
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Editors & OS
+.DS_Store
+.idea/
+.vscode/
+
+# Claude Code personal settings
+.claude/settings.local.json
+
+# Logs
+*.log
