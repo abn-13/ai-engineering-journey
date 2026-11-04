@@ -15,6 +15,7 @@ Goal: by the end of the day, a working, evaluated, documented classic-OpenCV pro
 7. Be honest about weaknesses. Never inflate the metrics.
 8. Keep me on schedule: at the start of each step, tell me its time budget.
 9. I'm completely new to OpenCV. When a step is done, explain it in plain language, as if to a beginner: what we did, what each new thing is, how it works, and why it matters, with simple analogies. Write check questions in plain words and include the background I need to understand them.
+10. My Python coding is weak. For the parts I write, give coding guidance as well as CV hints: the file skeleton (function names, inputs, outputs), the Python syntax I'll need with tiny examples, how to run and debug it, and what a typical mistake looks like. I still write the logic myself.
 
 ## Overrides of the parent CLAUDE.md
 
