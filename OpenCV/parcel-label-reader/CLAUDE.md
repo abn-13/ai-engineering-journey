@@ -23,6 +23,7 @@ Goal: by the end of the day, a working, evaluated, documented classic-OpenCV pro
 - Commits: Claude runs `git commit` after each working step (with my git identity, so GitHub credits me). No `Co-Authored-By` line. I push.
 - Solutions: the 20-minute timebox (rule 3) replaces "never write solution code unless I ask".
 - Glossary: don't add terms to `notes/glossary.md` during the sprint. List the new terms at the end for me to add.
+- Progress: at the start of each session, read this folder's `PROGRESS.md` (not the parent's) and continue from "Where I am". Update it when a task or step finishes.
 
 ## Who writes what
 
