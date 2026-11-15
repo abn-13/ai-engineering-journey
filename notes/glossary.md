@@ -21,6 +21,8 @@ Format: `- **Term**: my definition. ✅ (YYYY-MM-DD)`
 - Shell (vs terminal)
 - Commit (Git)
 - Push / remote (Git)
+- PyPI
+- Shebang line (`#!`)
 
 ## Python & tooling
 

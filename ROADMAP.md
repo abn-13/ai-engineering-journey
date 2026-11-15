@@ -38,10 +38,10 @@ The diagnostic on 4 Nov showed gaps in Python, OOP, Git and the terminal. Nothin
 ### 0.2 Terminal, venv and the basic Git loop
 **Goal:** Move around the terminal, run Python inside the venv, and save work with Git.
 Topics: absolute vs relative paths, `pwd`/`cd`/`ls`/`mkdir`, environment variables and `PATH`, activating `.venv`, running a script, `pip install`, the `git status` → `add` → `commit` → `push` loop.
-- [ ] Created and ran a script in `phase-0-fundamentals/` from the terminal, inside the venv
-- [ ] Installed a package and found it with `pip list`
-- [ ] Committed and pushed it without looking up the commands
-- [ ] I can explain what activating a venv actually changes
+- [x] Created and ran a script in `phase-0-fundamentals/` from the terminal, inside the venv
+- [x] Installed a package and found it with `pip list`
+- [x] Committed and pushed it without looking up the commands
+- [x] I can explain what activating a venv actually changes
 
 ### 0.3 Python core I: data and control flow
 **Goal:** Write small programs with lists, dicts, sets, loops and functions without syntax errors.
