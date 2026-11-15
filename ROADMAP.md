@@ -1,31 +1,54 @@
 # Roadmap
 
-**Start:** Wed 4 Nov 2026 · **Target:** job-ready by early March 2027 (16 weeks plus 1 buffer week)
+**Start:** Wed 4 Nov 2026 · **Plan:** all phases done by about 23 Feb 2027 at ~6 sessions a week · **Latest finish:** early April 2027 (weeks 17–22 are buffer)
 
 **Portfolio:**
-1. Warehouse simulation + Bayesian optimisation, deployed on AWS (Phase 1)
-2. RAG over public maritime documents, with an evaluation set (Phase 2)
+1. Warehouse simulation + Bayesian optimisation (Phase 1); its API is deployed on AWS in Phase 4
+2. RAG over public maritime documents, with an evaluation set, FastAPI and Docker (Phase 2)
 3. Tool-using agent that runs the Phase 1 simulation and explains the results (Phase 3)
+4. Small ML project: a Kaggle tabular pipeline with a write-up (ML track)
 
-**Weekly rhythm (assumed):** weekdays are about 35 min DSA plus 55 min phase work; weekend days are about 45 min DSA plus 2–3 h phase work. That gives roughly 8 phase sessions a week. A session below is 60–90 min, so a weekday session may take two evenings, which is fine. Unfinished "done when" items carry over; we don't skip ahead.
+**Weekly rhythm (assumed):** weekdays are about 35 min DSA plus 55 min phase work; weekend days are about 45 min DSA plus 2–3 h phase work. The plan assumes about **6 phase sessions a week** (≈7.5 h), plus DSA (≈4.5 h) and, from week 6, one 2-hour ML block on a weekend day. A session below is 60–90 min, so a weekday session may take two evenings, which is fine. Faster weeks pull the dates forward; slower weeks use the buffer. Unfinished "done when" items carry over; we don't skip ahead.
 
 ## Timeline
 
-| Week | Starts | Phase work | DSA topic |
-|---|---|---|---|
-| 1 | 4 Nov | Phase 0 (7 sessions) | Arrays & hashing (starts after 0.3) |
-| 2–4 | 11 Nov | Phase 1: simulation + optimisation | Arrays & hashing, two pointers, sliding window, stack |
-| 5–8 | 2 Dec | Phase 2: LLM basics + RAG | Stack, binary search, linked list, trees |
-| 9–12 | 30 Dec | Phase 3: tool calling + agent | Trees, heaps, graphs |
-| 13–14 | 27 Jan | Phase 4: deploy on AWS | Backtracking, intervals, greedy |
-| 15–16 | 10 Feb | Phase 5: polish | Greedy, 1-D DP |
-| 17 | 24 Feb | Buffer (holidays, overruns) | Re-solves, Hards |
+| Week | Starts | Phase work (~6 sessions) | ML track (~2 h) | DSA topic |
+|---|---|---|---|---|
+| 1 | 4 Nov | 0.1 (plus the OpenCV parcel-label sprint, parked on 15 Nov) | – | – |
+| 2 | 11 Nov | 0.2–0.3 | – | Python practice instead (DSA starts after 0.3) |
+| 3 | 18 Nov | 0.4–0.7, then Phase 1: 1.1–1.2 | – | Arrays & hashing |
+| 4 | 25 Nov | 1.3–1.8 | – | Arrays & hashing, two pointers |
+| 5 | 2 Dec | 1.9–1.13, then Phase 2: 2.1 | – | Sliding window, stack |
+| 6 | 9 Dec | 2.2–2.7 | ML.1 | Stack, binary search |
+| 7 | 16 Dec | 2.8–2.13 | ML.2 | Binary search, linked list |
+| 8 | 23 Dec | 2.14–2.16 (half pace: Christmas) | – | Linked list (half pace) |
+| 9 | 30 Dec | 2.17–2.19 (half pace: New Year) | – | Linked list (half pace) |
+| 10 | 6 Jan | Phase 3: 3.1–3.6 | ML.3 | Linked list, trees |
+| 11 | 13 Jan | 3.7–3.12 | ML.4 | Trees |
+| 12 | 20 Jan | 3.13–3.17, then Phase 4: 4.1 | ML.5 | Trees, heaps |
+| 13 | 27 Jan | 4.2–4.7 | ML.6 | Heaps, graphs |
+| 14 | 3 Feb | 4.8–4.13 | ML.7 | Graphs |
+| 15 | 10 Feb | 4.14, then Phase 5: 5.1–5.5 | ML.8 | Graphs, backtracking |
+| 16 | 17 Feb | 5.6 | – | Backtracking, intervals |
+| 17–22 | 24 Feb | Buffer: catch-up, mock interviews, job applications | – | Intervals, greedy, 1-D DP (done by about week 20), then re-solves and Hards |
 
-Christmas and New Year fall in weeks 8–9. Use the buffer week rather than cramming.
+Weeks 8–9 (23 Dec – 5 Jan) are planned at half pace for Christmas and New Year. Weeks 17–22 (24 Feb – 6 Apr) are buffer: if the pace holds they go to DSA, mock interviews and applications; if it slips, they absorb the overrun.
+
+**Showcase milestones** (what's public on GitHub, if the pace holds):
+
+| Target | Milestone | Session |
+|---|---|---|
+| ~8 Dec | Project 1: warehouse simulation + Bayesian optimisation, README with results | 1.13 |
+| ~5 Jan | Project 2: RAG over maritime documents with eval results, FastAPI, Docker and a demo | 2.19 |
+| ~26 Jan | Project 3: agent that runs the simulation and explains the results | 3.17 |
+| ~1 Feb | RAG or agent API live on AWS | 4.4 |
+| ~9 Feb | Simulation API live on AWS | 4.12 |
+| ~16 Feb | ML project write-up | ML.8 |
+| ~23 Feb | Polished READMEs, demo videos, CV | 5.6 |
 
 ---
 
-## Phase 0: Fundamentals refresher (week 1, extended to 7 sessions)
+## Phase 0: Fundamentals refresher (weeks 1–3, 7 sessions)
 
 The diagnostic on 4 Nov showed gaps in Python, OOP, Git and the terminal. Nothing was skipped, and Phase 0 went from 4 to 7 sessions. Details are in `PROGRESS.md`.
 
@@ -58,14 +81,14 @@ Topics: comprehensions, the mutable-default-argument trap, exceptions, modules a
 - [ ] Wrote a small generator of my own (e.g. a shift clock that yields times)
 
 ### 0.5 OOP I: classes and pytest
-**Goal:** Write and test a Python class, mapped onto what I know from Java.
-Topics: classes, `self`, `__init__`, methods, instance vs class attributes (Java `static`), `__repr__` and `__eq__`; pytest basics (test files, `assert`, running `pytest`).
+**Goal:** Write and test a Python class.
+Topics: classes, `self`, `__init__`, methods, instance vs class attributes (one per object vs shared by every object), `__repr__` and `__eq__`; pytest basics (test files, `assert`, running `pytest`).
 - [ ] A warehouse-themed class (e.g. `Forklift`) written by me, with passing pytest tests
 - [ ] Re-answered diagnostic Q4 and can explain it
 
 ### 0.6 OOP II: inheritance, polymorphism, encapsulation
 **Goal:** Python's version of inheritance, overriding and private fields.
-Topics: inheritance and `super()`, overriding and polymorphism, duck typing, the `_name` convention and `@property`, `@dataclass`, abstract base classes vs Java interfaces.
+Topics: inheritance and `super()`, overriding and polymorphism, duck typing, the `_name` convention and `@property`, `@dataclass`, abstract base classes (templates that force subclasses to have certain methods).
 - [ ] A small class hierarchy written by me, with pytest tests
 - [ ] Diagnostic Q6 (`Bin` with a validated `stock`) done with `@property`
 - [ ] Re-answered diagnostic Q5; I can say when to use a dataclass vs a plain class vs a dict
@@ -79,9 +102,9 @@ Topics: `diff`, `log`, branches, merge, `restore`, `commit --amend`, `fetch` vs 
 
 ---
 
-## Phase 1: Bridge project, warehouse simulation + Bayesian optimisation (weeks 2–4)
+## Phase 1: Bridge project, warehouse simulation + Bayesian optimisation (weeks 3–5)
 
-SimPy model of a small warehouse (arrivals, putaway, picking, staging), with warm-up, replications and confidence intervals. Then Bayesian optimisation tunes staffing and shift settings against a cost-and-delay objective, wrapped in FastAPI, containerised with Docker and deployed on AWS.
+SimPy model of a small warehouse (arrivals, putaway, picking, staging), with warm-up, replications and confidence intervals. Then Bayesian optimisation tunes staffing and shift settings against a cost-and-delay objective. The optimisation-under-noise study, the FastAPI endpoint, Docker and the AWS deployment for this project come later, in Phase 4, so the LLM phases start sooner.
 
 **Interview must-explain (ticked only after a spoken 2-minute explanation):**
 - [ ] Warm-up period: what initialisation bias is and how I chose the warm-up length
@@ -89,107 +112,81 @@ SimPy model of a small warehouse (arrivals, putaway, picking, staging), with war
 - [ ] Confidence intervals: how I computed them and what a 95% CI does and doesn't mean
 - [ ] Why Bayesian optimisation suits noisy, expensive simulations (vs grid search or gradient methods)
 
-### 1.1 Project skeleton and SimPy hello world
-**Goal:** A runnable project folder and my first SimPy process.
+### 1.1 Project skeleton, SimPy hello world and one dock door
+**Goal:** A runnable project folder, then trucks arriving at random at one dock door, with their waiting time measured.
 - [ ] `phase-1-simulation/` has a package folder, `requirements.txt` and `tests/` (boilerplate; the tutor may scaffold it)
 - [ ] A process prints events at simulated times (e.g. "t=5.0 truck arrives")
-- [ ] I can explain how `yield env.timeout(...)` advances the clock
+- [ ] Exponential inter-arrival and service times drawn from `numpy.random.Generator`; mean waiting time and dock utilisation printed
+- [ ] I can explain how `yield env.timeout(...)` advances the clock, and discrete-event simulation (jumping between events) vs fixed time-stepping as in CFD
 
-### 1.2 Discrete-event simulation basics: one dock door
-**Goal:** Trucks arrive at random at one dock door; measure their waiting time.
-- [ ] Exponential inter-arrival and service times drawn from `numpy.random.Generator`
-- [ ] Mean waiting time and dock utilisation printed
-- [ ] I can explain discrete-event simulation (jumping between events) vs fixed time-stepping as in CFD
-
-### 1.3 Verify against queueing theory (M/M/1)
+### 1.2 Verify against queueing theory (M/M/1)
 **Goal:** Show the simulation is correct by matching a known formula.
 - [ ] A long run's mean wait is within about 5% of the M/M/1 formula, and a pytest test checks it
 - [ ] I can explain verification (built it right) vs validation (built the right thing)
 
-### 1.4 Design the warehouse model on paper
+### 1.3 Design the warehouse model on paper
 **Goal:** Decide the scope before coding.
 - [ ] `phase-1-simulation/DESIGN.md` has the flow (arrivals, putaway, picking, staging), resources, parameters with units, and KPIs
 - [ ] At least 5 explicit simplifying assumptions, plus what a real digital twin would add
 
-### 1.5 Model structure and configuration
+### 1.4 Model structure and configuration
 **Goal:** Parameters in one place, the model in a class, no magic numbers.
 - [ ] A config dataclass with defaults; the model takes a config and a seed
 - [ ] The model runs for one simulated day and prints a summary
 
-### 1.6 Inbound: arrivals and putaway
+### 1.5 Inbound: arrivals and putaway
 - [ ] Pallets arrive in truckloads, wait for a forklift driver and get put away
 - [ ] Putaway time and forklift utilisation recorded
 
-### 1.7 Outbound: picking and staging
+### 1.6 Outbound: picking and staging
 - [ ] Orders arrive, wait for a picker, get picked, then wait for a limited number of staging lanes
 - [ ] Order cycle time (arrival to staged) recorded per order
 
-### 1.8 Shifts and staffing
+### 1.7 Shifts and staffing
 **Goal:** Staffing that changes during the day.
 - [ ] A shift schedule (e.g. 2 shifts with different headcounts) drives resource capacity
 - [ ] Output shows queues building when a shift is understaffed
 
-### 1.9 Metrics and tests
+### 1.8 Metrics, tests and reproducibility
 - [ ] KPIs collected in one place (e.g. a list of records turned into a pandas DataFrame)
 - [ ] At least 3 pytest tests on invariants: no negative waits; arrived = completed + still in system; utilisation between 0 and 1
-
-### 1.10 Randomness and reproducibility
 - [ ] Same seed gives identical results (tested); different seeds give different results
 - [ ] Separate random streams for arrivals and service times
 - [ ] I can explain common random numbers (CRN) and why they help when comparing scenarios
 
-### 1.11 Warm-up period
+### 1.9 Warm-up period
 **Goal:** Remove start-up bias from steady-state results.
 - [ ] Welch's method plot of a KPI averaged across replications, saved to a file
 - [ ] Warm-up length chosen and justified in `DESIGN.md`; statistics exclude it
 - [ ] I can explain initialisation bias, and terminating vs non-terminating simulations
 
-### 1.12 Replications and confidence intervals
+### 1.10 Replications and confidence intervals
 - [ ] A function runs n independent replications and returns mean ± 95% CI using the t-distribution
 - [ ] Estimated how many replications are needed for a target CI half-width
 - [ ] I can say what a 95% CI does and doesn't mean
 
-### 1.13 Objective function and baseline search
+### 1.11 Objective function and baseline search
 **Goal:** Turn the model into one number to minimise: staffing cost plus a delay penalty.
 - [ ] `evaluate(params) -> cost` runs replications inside; time per evaluation measured
 - [ ] Sanity check: more staff gives less delay and more cost
 - [ ] A small grid or random search as a baseline, results saved
 
-### 1.14 Bayesian optimisation with Optuna
+### 1.12 Bayesian optimisation with Optuna
 - [ ] An Optuna study tunes staffing per shift plus at least one shift setting (e.g. shift length or start time)
 - [ ] Compared with the baseline under the same evaluation budget
 - [ ] I can explain the surrogate model and acquisition function, and relate them to Kriging and DoE
 
-### 1.15 Optimisation under noise
-- [ ] Compared samplers (TPE, Gaussian process, random) with a convergence plot
-- [ ] Best configuration re-evaluated with many replications and a CI, compared with the baseline's best using CRN
-- [ ] I can explain why BO suits noisy, expensive simulations
-
-### 1.16 FastAPI endpoint
-- [ ] `POST /simulate` takes Pydantic-validated parameters and returns KPIs with CIs
-- [ ] Tests with FastAPI's `TestClient`; bad input returns 422
-- [ ] Runtime bounded (maximum replications and horizon)
-
-### 1.17 Docker
-- [ ] `Dockerfile` and `.dockerignore`; `docker run` serves the API locally
-- [ ] I can explain image vs container, layers, and why dependencies are installed before the code is copied
-
-### 1.18 Deploy on AWS
-- [ ] AWS budget alarm set first
-- [ ] Image in ECR; service reachable at a public URL (ECS Fargate or Lambda with a container image; compare cost first)
-- [ ] Teardown steps written down
-
-### 1.19 README: results and trade-offs
+### 1.13 README and interview drill
 - [ ] README covers the problem, model diagram, assumptions, method (warm-up, replications, CIs, BO), results, how to run, limitations
 - [ ] Trade-offs explained: cost vs delay, model fidelity vs run time, replications per trial vs number of trials
-
-### 1.20 Interview drill and retro
 - [ ] Spoken 2-minute explanation of each must-explain item, checked by the tutor
 - [ ] Whole project explained in 3 minutes: problem, approach, result, what I'd do next
 
 ---
 
-## Phase 2: LLM basics, then RAG over maritime documents (weeks 5–8)
+## Phase 2: LLM basics, then RAG over maritime documents (weeks 5–9)
+
+The FastAPI wrapper (2.16) is followed by a Docker session (2.17), so the RAG API already runs in a container before Phase 4.
 
 **Interview must-explain:**
 - [ ] Chunking trade-offs (size, overlap, structure-aware)
@@ -263,17 +260,21 @@ SimPy model of a small warehouse (arrivals, putaway, picking, staging), with war
 - [ ] `POST /ask` returns answer and citations, with Pydantic models
 - [ ] Tests run offline with the LLM mocked
 
-### 2.17 Demo UI
+### 2.17 Docker
+- [ ] `Dockerfile` and `.dockerignore`; `docker run` serves the RAG API locally, with the API key passed in as an environment variable (not baked into the image)
+- [ ] I can explain image vs container, layers, and why dependencies are installed before the code is copied (layer caching)
+
+### 2.18 Demo UI
 - [ ] A simple Streamlit or Gradio UI showing the answer and its sources
 - [ ] Screen recording or GIF for the README
 
-### 2.18 README and interview drill
+### 2.19 README and interview drill
 - [ ] README: architecture diagram, corpus, eval method, results table, failure modes, cost and latency
 - [ ] Spoken 2-minute explanation of each must-explain item
 
 ---
 
-## Phase 3: Tool calling, then an agent (weeks 9–12)
+## Phase 3: Tool calling, then an agent (weeks 10–12)
 
 Target: an agent that runs the Phase 1 simulation and explains the results.
 
@@ -352,7 +353,9 @@ Target: an agent that runs the Phase 1 simulation and explains the results.
 
 ---
 
-## Phase 4: Deploy the RAG or agent project on AWS (weeks 13–14)
+## Phase 4: Optimise and ship (weeks 12–15)
+
+The RAG or agent API goes on AWS first (4.1–4.8), because it's the most job-relevant. Then the Phase 1 project is finished: the optimisation-under-noise study, and the simulation API built, containerised and deployed alongside it (4.9–4.12). Infrastructure as code and the load test come last (4.13–4.14).
 
 ### 4.1 Choose what and how to deploy
 - [ ] Decided RAG or agent; architecture diagram (compute, storage, secrets, logs)
@@ -386,11 +389,28 @@ Target: an agent that runs the Phase 1 simulation and explains the results.
 - [ ] GitHub Actions runs tests on every push and pull request
 - [ ] Deploy on merge to `main` using OIDC, with no long-lived AWS keys
 
-### 4.9 Infrastructure as code (light)
+### 4.9 Optimisation under noise (Phase 1 project)
+- [ ] Compared samplers (TPE, Gaussian process, random) with a convergence plot
+- [ ] Best configuration re-evaluated with many replications and a CI, compared with the baseline's best using CRN
+- [ ] I can explain why BO suits noisy, expensive simulations, using my own convergence plot
+
+### 4.10 Simulation API: FastAPI endpoint
+- [ ] `POST /simulate` takes Pydantic-validated parameters and returns KPIs with CIs
+- [ ] Tests with FastAPI's `TestClient`; bad input returns 422
+- [ ] Runtime bounded (maximum replications and horizon)
+
+### 4.11 Simulation API: Docker
+- [ ] `Dockerfile` and `.dockerignore` for the simulation API, following the 2.17 and 4.2 patterns; `docker run` serves it locally
+
+### 4.12 Deploy the simulation API on AWS
+- [ ] Image in ECR; service reachable at a public URL, reusing the setup from 4.3–4.8 (ECS Fargate or Lambda with a container image; compare cost first)
+- [ ] Teardown steps written down
+
+### 4.13 Infrastructure as code (light)
 - [ ] Core resources defined in Terraform or AWS CDK
 - [ ] Torn down and recreated from scratch
 
-### 4.10 Load test, cost review, write-up
+### 4.14 Load test, cost review, write-up
 - [ ] Small load test; p50/p95 latency and cost per 100 requests recorded
 - [ ] README deployment section: architecture, costs, how to pause or tear down
 
@@ -423,29 +443,75 @@ Target: an agent that runs the Phase 1 simulation and explains the results.
 
 ---
 
-## Parallel track: DSA (NeetCode 150 in Python, weeks 1–16)
+## Parallel track: ML fundamentals (weeks 6–15, about 2 h a week)
+
+Starts after Phase 1 and runs alongside Phases 2–4, in one weekend block a week (none in the holiday weeks). Sources: StatQuest videos and Google's Machine Learning Crash Course (MLCC), core topics only. Work goes in `ml-track/`, with its own `requirements.txt`.
+
+**Interview must-explain:**
+- [ ] Overfitting and the bias–variance trade-off, and how cross-validation detects overfitting
+- [ ] Regularisation (L1 vs L2) and why it helps
+- [ ] Confusion matrix, precision vs recall, and when accuracy misleads
+- [ ] Gradient descent, and what the learning rate does (compare with convergence in CFD)
+- [ ] How decision trees split, and why gradient boosting usually beats a single tree on tabular data
+- [ ] Why you build a simple baseline before a complex model
+
+### ML.1 Regression and gradient descent
+- [ ] Watched StatQuest and MLCC on linear regression, loss and gradient descent; notes in `ml-track/notes.md`
+- [ ] Wrote gradient descent for a straight-line fit in numpy and checked it against scikit-learn's `LinearRegression`
+
+### ML.2 Logistic regression and classification metrics
+- [ ] Watched StatQuest and MLCC on logistic regression, the confusion matrix, precision and recall, and ROC/AUC
+- [ ] Built a confusion matrix by hand for a small example and checked it with scikit-learn
+
+### ML.3 Overfitting, cross-validation and regularisation
+- [ ] Watched StatQuest and MLCC on bias and variance, train/validation/test splits, cross-validation, and ridge and lasso
+- [ ] Showed overfitting on a small example (training score up, cross-validation score down) and reduced it with regularisation
+
+### ML.4 Decision trees and gradient boosting
+- [ ] Watched StatQuest on decision trees, random forests and gradient boosting
+- [ ] Trained a tree and a gradient-boosting model on the same small dataset and compared cross-validation scores
+
+### ML.5 Kaggle project: dataset and EDA
+- [ ] Chose a tabular dataset, ideally in my domain (e.g. solar power generation or late-delivery prediction), and checked its licence
+- [ ] EDA (exploratory data analysis): target distribution, missing values, a few key plots; 3 findings written down
+
+### ML.6 Baseline with scikit-learn
+- [ ] A scikit-learn `Pipeline` (preprocessing + simple model) with a proper train/test split and a chosen metric
+- [ ] Baseline score recorded, with the reason for the metric
+
+### ML.7 Gradient boosting with cross-validation
+- [ ] Gradient boosting (e.g. scikit-learn's `HistGradientBoosting`, LightGBM or XGBoost) tuned with cross-validation
+- [ ] Compared with the baseline on the same test set; the test set wasn't used during tuning (no data leakage)
+
+### ML.8 Write-up and interview drill
+- [ ] README: problem, data, EDA findings, baseline vs gradient boosting, cross-validation scores, limitations, what I'd do next
+- [ ] Spoken 2-minute explanation of each must-explain item
+
+---
+
+## Parallel track: DSA (NeetCode 150 in Python, weeks 3–20)
 
 Full ordered list: [`dsa/neetcode-list.md`](dsa/neetcode-list.md). Log: [`dsa/log.md`](dsa/log.md). Patterns: [`dsa/patterns.md`](dsa/patterns.md).
 
 | Weeks | Topic | Problems (Hard) |
 |---|---|---|
-| 1–2 | Arrays & hashing | 9 |
-| 3 | Two pointers | 5 (1) |
-| 3–4 | Sliding window | 6 (2) |
-| 4–5 | Stack | 7 (1) |
-| 5–6 | Binary search | 7 (1) |
-| 6–7 | Linked list | 11 (2) |
-| 8–9 | Trees | 15 (2) |
-| 10 | Heaps / priority queue | 7 (1) |
-| 11–12 | Graphs | 13 (1) |
-| 13 | Backtracking | 9 (1) |
-| 14 | Intervals | 6 (1) |
-| 14–15 | Greedy | 8 |
-| 15–16 | 1-D dynamic programming | 12 |
+| 3–4 | Arrays & hashing | 9 |
+| 4 | Two pointers | 5 (1) |
+| 5 | Sliding window | 6 (2) |
+| 5–6 | Stack | 7 (1) |
+| 6–7 | Binary search | 7 (1) |
+| 7–10 | Linked list | 11 (2) |
+| 10–12 | Trees | 15 (2) |
+| 12–13 | Heaps / priority queue | 7 (1) |
+| 13–15 | Graphs | 13 (1) |
+| 15–16 | Backtracking | 9 (1) |
+| 16–17 | Intervals | 6 (1) |
+| 17–18 | Greedy | 8 |
+| 18–20 | 1-D dynamic programming | 12 |
 
-That's 115 of the 150; tries, advanced graphs, 2-D DP, bit manipulation and math are out of scope until after week 16.
+That's 115 of the 150; tries, advanced graphs, 2-D DP, bit manipulation and math are out of scope until after week 20.
 
-**Pace check:** this needs about 7 new problems a week plus re-solves, which the 5 weekday slots alone won't cover. It assumes the weekend DSA blocks too. Hard problems are optional on the first pass. Checkpoint at the end of week 7: if fewer than about 40 problems are logged, we cut to a core list rather than rush.
+**Pace check:** this needs about 7 new problems a week plus re-solves (about 3 in the half-pace holiday weeks), which the 5 weekday slots alone won't cover. It assumes the weekend DSA blocks too. Hard problems are optional on the first pass. Checkpoint at the end of week 9 (5 Jan): if fewer than about 40 problems are logged, we rebalance time toward DSA rather than rush.
 
 - [ ] Arrays & hashing
 - [ ] Two pointers

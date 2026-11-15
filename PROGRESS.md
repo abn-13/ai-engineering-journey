@@ -3,7 +3,10 @@
 ## Current status
 - **Phase:** 0, Fundamentals refresher (extended to 7 sessions)
 - **Next session:** 0.3 Python core I: data and control flow
-- **DSA:** starts after session 0.3; the first problem is Contains Duplicate. Until then, use the weekday DSA slot for extra Python practice.
+- **Plan:** restructured on 2026-11-15 (see `ROADMAP.md`). Planned at ~6 sessions a week: all phases done by about 23 Feb 2027, buffer until early April. Next showcase milestone: Project 1 (simulation + BO README) around 8 Dec.
+- **DSA:** starts after session 0.3 (week 3); the first problem is Contains Duplicate. Until then, use the weekday DSA slot for extra Python practice.
+- **ML track:** starts in week 6 (9 Dec), one 2-hour weekend block a week.
+- **Parked:** OpenCV parcel-label reader sprint, parked on 2026-11-15 at Step 3a of 8 (not job-critical). Resume from `OpenCV/parcel-label-reader/PROGRESS.md` if picked up again after Phase 5.
 - **Weak spots to watch:** generators (`yield`); dict accumulation and basic syntax (`=` vs `==`); inheritance and polymorphism; `@property`; Git branches and fetch vs pull (the staging area is now OK); relative paths (check `pwd` before using one); explaining *why*, not restating *what*; commit messages (imperative and specific); pytest not used yet (0.5)
 - **Machine notes:** conda's `auto_activate` is off (2026-11-15). VS Code activates `.venv` in new terminals by itself. `/opt/anaconda3/bin` still shows up in `PATH` in VS Code terminals (cause unclear). The python.org Python already has many global packages (numpy, pandas, fastapi, torch), so a missing `import` error can be hidden when the venv is off. The `compdef: command not found` line at terminal start comes from `~/.zshrc` line 5 (Angular completion); harmless, not fixed.
 
@@ -35,6 +38,10 @@
 - **Quiz:**
 - **Next:**
 -->
+
+### 2026-11-15 · Plan change (not a session)
+- **Why:** Phase 0 ran slower than planned (2 sessions in 11 days, partly due to the OpenCV sprint), and the goal is to get the most job-relevant work public as early as possible.
+- **Changed:** Phase 1 now ends after the basic Optuna study (13 sessions, two merges); the optimisation-under-noise study, simulation FastAPI, Docker and AWS move to Phase 4, after the RAG/agent deployment. Docker session added to Phase 2 (2.17). New ML track (ML.1–ML.8). Timeline recalculated at 6 sessions a week, with showcase milestones. OpenCV sprint parked. Nothing cut.
 
 ### 2026-11-15 · Session 0.2: Terminal, venv and the basic Git loop
 - **Did (started 2026-11-10):** moved around with `pwd`, `ls -a`, `cd` and `mkdir`; absolute vs relative paths, and quotes or `\ ` for spaces; saw what activation does to `PATH` with `which` and `echo $PATH`; turned off conda's auto-activate; wrote `phase-0-fundamentals/terminal_basics/where_am_i.py` and ran it three ways (repo root, inside its folder, venv off); fixed a `mkdir` mix-up with `mv` and `rmdir`; reactivated the venv with an absolute and a relative (`../../`) path; installed pytest and traced it with `pip list`, `pip show` and `which`; ran the Git loop from memory: three separate commits using `add`, `restore --staged`, `commit` and `push`.
